@@ -1,0 +1,24 @@
+<div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+  <!--<mat-card fxFlex="1 2 calc(50% - 20px)"><mat-icon aria-hidden="false" aria-label="Example home icon">theater_comedy
+    </mat-icon> Drama / Theater</mat-card>
+    <mat-card fxFlex="1 2 calc(50% - 20px)"><mat-icon aria-hidden="false" aria-label="Example home icon">speaker
+    </mat-icon> Music</mat-card>
+    <mat-card fxFlex="1 2 calc(50% - 20px)"><mat-icon aria-hidden="false" aria-label="Example home icon">speaker
+    </mat-icon> Music</mat-card>-->
+
+  <ng-container *ngFor="let category of categories">
+    <mat-card
+      fxLayout
+      fxLayoutAlign="center center"
+      fxFlex="0 1 calc(50% - 32px)"
+      style="height: 90px; cursor: pointer"
+      (click)="onCategorySelect.emit(category)"
+      ><mat-icon aria-hidden="false" fxFlex="50px"
+      style="zoom: 1.5;"
+        >{{ category?.matIcon }} </mat-icon
+      ><span fxFlex style="font-size: 1.5em">{{
+        category?.name
+      }}</span></mat-card
+    >
+  </ng-container>
+</div>
