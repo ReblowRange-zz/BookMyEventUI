@@ -1,12 +1,23 @@
 import { NgModule } from '@angular/core';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { NbInputModule, NbButtonModule, NbIconModule, NbThemeModule, NbLayoutModule, NbSelectModule } from '@nebular/theme';
+import {
+  NbButtonModule,
+  NbCardModule,
+  NbDatepickerModule,
+  NbIconModule,
+  NbInputModule,
+  NbLayoutModule,
+  NbListModule,
+  NbSelectModule,
+  NbThemeModule,
+} from '@nebular/theme';
 
 
 
 @NgModule({
   imports: [
     NbThemeModule.forRoot({ name: 'default' }),
+    
   ],
   exports: [
     NbInputModule,
@@ -16,6 +27,9 @@ import { NbInputModule, NbButtonModule, NbIconModule, NbThemeModule, NbLayoutMod
     NbThemeModule,
     NbLayoutModule,
     NbSelectModule,
-  ]
+    NbListModule,
+    NbCardModule,
+    NbInputModule,
+  ],
 })
 export class NebularLibsModule { }

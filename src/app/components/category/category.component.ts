@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Category } from 'src/app/models/CategoryBean';
+import { Category } from 'src/app/models/Constants';
 import { RestService } from 'src/app/service/rest.service';
 
 @Component({
@@ -43,8 +43,8 @@ export class CategoryComponent implements OnInit {
   constructor(private readonly restService: RestService) { }
 
   ngOnInit(): void {
-    this.restService.getCategories().subscribe(res => {
-
+    this.restService.getAllCategories().subscribe(res => {
+      this.categories = res && res.length ? res : [];
     });
   }
 

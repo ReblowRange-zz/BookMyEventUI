@@ -1,0 +1,29 @@
+<div fxLayout>
+  <span fxFlex fxLayout="column">
+    <span fxFlex="45px">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        style="zoom: 1.4"
+        >public
+      </mat-icon>
+      Most Polular Events in
+    </span>
+    <mat-form-field appearance="fill">
+      <mat-label>Popular Event Location</mat-label>
+      <mat-select [(value)]="selectedCity">
+        <mat-option
+          *ngFor="let item of locationList"
+          value="{{ item.value }}"
+          >{{ item.text }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    <nb-list nbInfiniteList [threshold]="500" (bottomThreshold)="(90)">
+      <nb-list-item *ngFor="let item of locationList"></nb-list-item>
+    </nb-list>
+  </span>
+  <span fxFlex>
+    <app-category></app-category>
+  </span>
+</div>

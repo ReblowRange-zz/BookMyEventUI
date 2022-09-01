@@ -1,0 +1,70 @@
+<nb-card>
+  <nb-card-body>
+    <form [formGroup]="eventForm" (ngSubmit)="onSubmit(eventForm)">
+      <fieldset>
+        <legend>Create Event</legend>
+        <input
+          type="text"
+          nbInput
+          fullWidth
+          fieldSize="small"
+          placeholder="Event Name"
+          formControlName="name"
+        />
+        <textarea
+          nbInput
+          fullWidth
+          placeholder="Description"
+          formControlName="description"
+        ></textarea>
+        <nb-select
+          placeholder="Category"
+          status="basic"
+          fullWidth
+          formControlName="category"
+        >
+          <nb-option *ngFor="let item of categoryList" value="{{ item.name }}"
+            >{{ item.name }}
+          </nb-option>
+        </nb-select>
+
+        <input
+          nbInput
+          placeholder="Pick Event Date & TIme"
+          fullWidth
+          [nbDatepicker]="dateTimePicker"
+          formControlName="onDate"
+        />
+        <nb-date-timepicker
+          #dateTimePicker
+          singleColumn
+          [step]="10"
+        ></nb-date-timepicker>
+
+        <nb-select
+          placeholder="Location"
+          status="basic"
+          fullWidth
+          formControlName="location"
+        >
+          <nb-option *ngFor="let item of locationList" value="{{ item.value }}"
+            >{{ item.text }}
+          </nb-option>
+        </nb-select>
+
+        <button
+          style="float: right"
+          nbButton
+          hero
+          status="success"
+          size="medium"
+        >
+          Submit
+        </button>
+        <button (click)="eventForm.reset()" style="float: right" nbButton hero status="basic" size="medium">
+          Reset
+        </button>
+      </fieldset>
+    </form>
+  </nb-card-body>
+</nb-card>

@@ -10,32 +10,13 @@
         ></nb-icon>
       </div>
 
-      <div style="float: right"></div>
+      <div style="float: right">
+        <button nbButton status="primary" [routerLink]="'/admin'" style="zoom: 0.8;">Admin</button></div>
     </div>
   </nb-layout-header>
 
   <nb-layout-column>
-    <div fxLayout>
-      <span fxFlex fxLayout="column">
-        <!-- <span fxFlex="45px">
-          <mat-icon aria-hidden="false" aria-label="Example home icon" style="zoom: 1.4;">public
-          </mat-icon>
-          Most Polular Events in
-        </span> -->
-        <mat-form-field appearance="fill">
-          <mat-label>Popular Event Location</mat-label>
-          <mat-select [(value)]="selectedCity">
-            <mat-option>{{selectedCity}}</mat-option>
-            <mat-option value="option1">Option 1</mat-option>
-            <mat-option value="option2">Option 2</mat-option>
-            <mat-option value="option3">Option 3</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </span>
-      <span fxFlex>
-        <app-category></app-category>
-      </span>
-    </div>
+    <router-outlet></router-outlet>
   </nb-layout-column>
 
   <nb-layout-footer fixed>
