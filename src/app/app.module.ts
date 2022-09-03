@@ -30,7 +30,6 @@ import { CreateCategoryComponent } from './components/create-category/create-cat
     BrowserModule,
     NebularLibsModule,
     BrowserAnimationsModule,
-    NbDatepickerModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
     MaterialLibsModule,

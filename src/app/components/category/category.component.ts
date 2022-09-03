@@ -43,9 +43,7 @@ export class CategoryComponent implements OnInit {
   constructor(private readonly restService: RestService) { }
 
   ngOnInit(): void {
-    this.restService.getAllCategories().subscribe(res => {
-      this.categories = res && res.length ? res : [];
-    });
+
   }
 
 }

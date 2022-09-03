@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Category } from '../models/Constants';
+import { Category, Event } from '../models/Constants';
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +32,29 @@ export class RestService {
 
   public createEvent(event: Event): Observable<Event> {
     return this.httpClient.post<Event>('event', event);
+  }
+
+  public getEventById(id: number): Observable<Event> {
+    return this.httpClient.get<Event>('event/id/' + id);
+  }
+
+  public getEventByCategory(category: string): Observable<Event[]> {
+    return this.httpClient.get<Event[]>('event/category/' + category);
+  }
+
+  public getEventByCategoryNLocation(category: string, location: string): Observable<Event[]> {
+    return this.httpClient.get<Event[]>('event/cate_n_loc', { params: { category: category, location: location } });
+  }
+
+  public getAllEvent(): Observable<Event[]> {
+    return this.httpClient.get<Event[]>('event/all');
+  }
+
+  public updateEvent(event: Event): Observable<Event> {
+    return this.httpClient.put<Event>('event', event);
+  }
+
+  public deleteEventById(id: number): Observable<Event> {
+    return this.httpClient.delete<Event>('event/id/' + id);
   }
 }

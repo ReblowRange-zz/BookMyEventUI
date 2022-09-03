@@ -11,7 +11,25 @@
       </div>
 
       <div style="float: right">
-        <button nbButton status="primary" [routerLink]="'/admin'" style="zoom: 0.8;">Admin</button></div>
+        <button
+          *ngIf="!isAdminPath"
+          nbButton
+          status="primary"
+          [routerLink]="'/admin'"
+          style="zoom: 0.8"
+        >
+          Admin
+        </button>
+        <button
+          *ngIf="isAdminPath"
+          nbButton
+          status="primary"
+          [routerLink]="'/home'"
+          style="zoom: 0.8"
+        >
+          Home
+        </button>
+      </div>
     </div>
   </nb-layout-header>
 

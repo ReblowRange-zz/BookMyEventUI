@@ -18,6 +18,7 @@
           placeholder="Mat Icon String"
           formControlName="matIcon"
         />
+        <a href="https://fonts.google.com/icons" target="_blank">See Icons</a>
         <div
           style="
             padding: 15px;
@@ -72,8 +73,8 @@
           category?.name
         }}</span>
         <span fxFlex="100px">
-            <nb-icon fxFlex="50px" (click)="editCategory(category.id)" icon="edit-2-outline"></nb-icon>
-            <nb-icon fxFlex="50px" (click)="deleteCategory(category.id)" icon="trash-2-outline"></nb-icon>
+            <nb-icon fxFlex="50px" status="primary" (click)="editCategory(category.id)" icon="edit-2-outline"></nb-icon>
+            <nb-icon fxFlex="50px" status="danger" (click)="deleteCategory(category.id)" icon="trash-2-outline"></nb-icon>
         </span>
         </mat-card>
     </nb-list-item>

@@ -9,15 +9,19 @@ import {
   NbLayoutModule,
   NbListModule,
   NbSelectModule,
+  NbTabsetModule,
   NbThemeModule,
+  NbTimepickerModule,
 } from '@nebular/theme';
 
 
 
 @NgModule({
   imports: [
-    NbThemeModule.forRoot({ name: 'default' }),
     
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbDatepickerModule.forRoot(),
+    NbTimepickerModule.forRoot()
   ],
   exports: [
     NbInputModule,
@@ -30,6 +34,9 @@ import {
     NbListModule,
     NbCardModule,
     NbInputModule,
+    NbDatepickerModule,
+    NbTimepickerModule,
+    NbTabsetModule
   ],
 })
 export class NebularLibsModule { }
