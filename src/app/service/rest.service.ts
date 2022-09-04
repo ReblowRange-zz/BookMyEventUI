@@ -43,7 +43,7 @@ export class RestService {
   }
 
   public getEventByCategoryNLocation(category: string, location: string): Observable<Event[]> {
-    return this.httpClient.get<Event[]>('event/cate_n_loc', { params: { category: category, location: location } });
+    return this.httpClient.get<Event[]>('event', { params: { category: category, location: location } });
   }
 
   public getAllEvent(): Observable<Event[]> {
