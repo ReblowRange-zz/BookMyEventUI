@@ -13,9 +13,11 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpIntercepterService } from './core/http-intercepter.service';
 import { MaterialLibsModule } from './modules/material-libs.module';
 import { NebularLibsModule } from './modules/nebular-libs.module';
-import { CategoryComponent } from './components/category/category.component';
-import { CreateEventComponent } from './components/create-event/create-event.component';
-import { CreateCategoryComponent } from './components/create-category/create-category.component';
+import { CategoryComponent } from './widgets/category/category.component';
+import { CreateEventComponent } from './widgets/create-event/create-event.component';
+import { CreateCategoryComponent } from './widgets/create-category/create-category.component';
+import { DialogComponent } from './widgets/dialog/dialog.component';
+import { DialogService } from './widgets/dialog.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { CreateCategoryComponent } from './components/create-category/create-cat
     AdminComponent,
     CreateEventComponent,
     CategoryComponent,
-    CreateCategoryComponent
+    CreateCategoryComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import { CreateCategoryComponent } from './components/create-category/create-cat
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterService, multi: true},
+    DialogService
   ],
   bootstrap: [AppComponent]
 })

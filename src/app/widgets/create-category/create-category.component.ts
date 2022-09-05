@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Category } from 'src/app/models/Constants';
 import { RestService } from 'src/app/service/rest.service';
+import { DialogService } from '../dialog.service';
 
 @Component({
   selector: 'app-create-category',
@@ -13,7 +14,8 @@ export class CreateCategoryComponent implements OnInit {
   public categoryForm: FormGroup;
   public categoryList = new Array<Category>();
 
-  constructor(private readonly restService: RestService, private readonly formBuider: FormBuilder) {
+  constructor(private readonly restService: RestService, private readonly formBuider: FormBuilder,
+    private readonly dialogService: DialogService) {
 
     this.categoryForm = this.formBuider.group({
       id: [null],
@@ -38,6 +40,7 @@ export class CreateCategoryComponent implements OnInit {
     else {
       this.restService.addCategory(category).subscribe(res => {
         console.log(res);
+        this.dialogService.success.next('Category Added');
         this.getCategoryList();
         this.categoryForm.reset();
       });

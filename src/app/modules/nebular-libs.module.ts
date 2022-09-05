@@ -12,6 +12,7 @@ import {
   NbTabsetModule,
   NbThemeModule,
   NbTimepickerModule,
+  NbToastrModule,
 } from '@nebular/theme';
 
 
@@ -21,7 +22,8 @@ import {
     
     NbThemeModule.forRoot({ name: 'default' }),
     NbDatepickerModule.forRoot(),
-    NbTimepickerModule.forRoot()
+    NbTimepickerModule.forRoot(),
+    NbToastrModule.forRoot()
   ],
   exports: [
     NbInputModule,
